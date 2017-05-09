@@ -4,11 +4,11 @@ int gap[3];
 int xylo_op;
 unsigned long timer;
 int i=0 , detect=0;
+
+void setup() {
 gap[0]=1000;
 gap[1]=1000;
 gap[2]=0;
-
-void setup() {
   // put your setup code here, to run once:
 
 }
