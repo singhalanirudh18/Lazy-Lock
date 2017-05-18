@@ -10,8 +10,8 @@ def angle(A,B,C) :
 	ang =  degrees(acos((b*b + c*c - a*a)/(2*b*c)))
 	return ang
 
-im = cv2.imread('g5.jpg',0)
-im1 = cv2.imread('g5.jpg')
+im = cv2.imread('g1.jpg',0)
+im1 = cv2.imread('g1.jpg')
 kernel = np.ones((10,10),np.uint8)
 #erosion = cv2.erode(thresh,kernel,iterations =2)
 blur = cv2.blur(im,(20,20))
@@ -90,6 +90,7 @@ print numberoffinger
 
 
 plt.show()
+cv2.imwrite("r1.jpg",im1)
 cv2.namedWindow('thresh', cv2.WINDOW_NORMAL)
 cv2.imshow('thresh',im1)
 cv2.waitKey(0)
