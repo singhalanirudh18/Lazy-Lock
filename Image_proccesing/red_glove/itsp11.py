@@ -18,6 +18,7 @@ def angle(A,B,C) :
  
 # load the image
 image = cv2.imread("r2.jpg")
+image18=cv2.imread("r2.jpg")
 kernel = np.ones((10,10),np.uint8)
 #erosion = cv2.erode(thresh,kernel,iterations =2)
 blur = cv2.blur(image,(20,20))
@@ -46,7 +47,7 @@ for (lower, upper) in boundaries:
 imgray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
 ret, thresh = cv2.threshold(imgray, 60, 255, 0)
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-#cv2.drawContours(image,contours,-1,(0,255,0),10)
+#cv2.drawContours(image18,contours,-1,(0,255,0),10)
 #print len(contours)
 ci=0
 max_area=0
@@ -70,7 +71,7 @@ for i in range(len(contours)):
 #print max_area,ci
 #print ci
 cnt=contours[ci]
-cv2.drawContours(image,[cnt],0,(0,255,0),10)
+cv2.drawContours(image18,[cnt],0,(0,255,0),10)
 x,y,w,h = cv2.boundingRect(cnt)
 #print w,h
 lbr=2*(w+h)
@@ -108,8 +109,8 @@ for i in range(defects.shape[0]):
 
 	# show the images
 print count+1
-#cv2.imwrite("r5.jpg",output)
+cv2.imwrite("R2.jpg",image18)
 cv2.namedWindow('image', cv2.WINDOW_NORMAL)
-cv2.imshow('image',image)
+cv2.imshow('image',image18)
 cv2.waitKey(0)
 cv2.destroyAllWindows()  
