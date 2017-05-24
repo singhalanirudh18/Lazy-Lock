@@ -4,5 +4,6 @@ g.setmode(g.BOARD)
 g.steup(12,g.OUT)
 pwm = g.PWM(11,50)# use 100 if error
 pwm.start(2)
+
 input("\nPress Enter to continue.")
 pwm.ChangeDutyCycle(6.5)
