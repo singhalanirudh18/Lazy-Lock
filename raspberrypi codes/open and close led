@@ -2,7 +2,8 @@ Step 1 open bluetooth of rpi and phone
 run bttest3 in itsp folder  in documents
 hit connect on blueterm app on phone aand connect to r pi
 1 and 0 sends commands
-
+add servo on click to open door lock
+note dnd is left
 
 
 python code
