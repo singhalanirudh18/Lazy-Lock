@@ -24,16 +24,19 @@ Locking and unlocking of a door is a crutial aspect as far as security is concer
 #### 1.2.4 Problems
 
 
-### 1.2 Knocking Recognition
-#### 1.2.1 Idea
-#### 1.2.2 Components
-#### 1.2.3 Working
-#### 1.2.4 Problems
+### 1.3 Knocking Recognition
+#### 1.3.1 Idea
+#### 1.3.2 Components
+#### 1.3.3 Working
+#### 1.3.4 Problems
 
 
-### 1.2 Bluetooth
-#### 1.2.1 Idea
-#### 1.2.2 Components
-#### 1.2.3 Working
-#### 1.2.4 Problems
+### 1.4 Bluetooth
+#### 1.4.1 Idea
+#### 1.4.2 Components
+#### 1.4.3 Working
+#### 1.4.4 Problems
+
+## 2. Integration with Raspberry Pi
+
 
