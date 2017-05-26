@@ -15,7 +15,7 @@ Our problem statement which precisely describes the problem which we are aiming 
 </br>
 
 ### 1.1 Motivation
-locking and unlocking of a door is a crutial aspect as far as security is concerned. The application of this system helps in fulfilling the given objective. Many a times it happens that the key of a lock goes missing, or a person leaves and lockes a room and another person want to enter the room, or a person is sleeping and other person needs to enter the room. at such places it becomes important to eleminate the orthodox way of using a key to open the lock or the need of other people to open the lock. hence to fulfill this objective we designed the above system such that a limited no of people have the access to open a lock by knowing the correct gesture or knock pattern. 
+Locking and unlocking of a door is a crutial aspect as far as security is concerned. The application of this system helps in fulfilling the given objective. Many a times it happens that the key of a lock goes missing, or a person leaves and lockes a room and another person want to enter the room, or a person is sleeping and other person needs to enter the room. at such places it becomes important to eleminate the orthodox way of using a key to open the lock or the need of other people to open the lock. hence to fulfill this objective we designed the above system such that a limited no of people have the access to open a lock by knowing the correct gesture or knock pattern. 
 
 ### 1.2 Image processing
 
