@@ -79,7 +79,7 @@ for i in range(defects.shape[0]):
     	#print i,d
 
 numberoffinger = count +1
-print numberoffinger
+print (numberoffinger)
 #cv2.imshow('img',img)
 #cv2.waitKey(0)
 #cv2.destroyAllWindows()
