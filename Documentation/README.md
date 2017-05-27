@@ -95,7 +95,8 @@ We will also use bluetooth to make the lock function smoothly. Using the RPi and
  1. Lack of material on the net
  2. Problems in bluetooth connection between the RPi and Mobile phone
 #### 1.2.5 Solutions to problems faced
- 1. Compilation of commands through differnt websites mainly [this](https://spidyhero.wordpress.com/2016/03/15/using-smart-phone-android-to-control-led-on-raspberry-pi-3-through-bluetooth-connection/)</br>2.The most helpful blog was [this one](https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/)
+ 1. Compilation of commands through differnt websites mainly [this](https://spidyhero.wordpress.com/2016/03/15/using-smart-phone-android-to-control-led-on-raspberry-pi-3-through-bluetooth-connection/)
+ 2. The most helpful blog was [this one](https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/)
 ## 2. Integration with Raspberry Pi
 
 
