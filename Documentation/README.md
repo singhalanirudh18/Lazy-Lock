@@ -34,40 +34,40 @@ Our basic IP algoritm is neatly represented by this flowchart :
 ![alt text](https://github.com/singhalanirudh18/itsp/blob/master/images/gesture_flowchart.png)
 
 #### 1.2.4 Problems
--The major problems that we faced with respect to IP were :
- -1. **Thresholding problems** 
- -2. **Inability to detect complex gestures**
- -3. **Conversion From OpenCV2 to OpenCV3**
- -
- -#### 1.2.5 Solutions to problems faced
- -This were the solutions we were able to come with :-
- -1.  For thresholding pains we used a red glove which proved out to be very good solution. For thresholding of red colour I would recommend using HSV colour scheme instead of RGB. Here is the code for thresholding using HSV colour scheme:-
- -
- -```python
- -def segment_colour(frame):    #returns only the red colors in the frame
- -    hsv_roi =  cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
- -    mask_1 = cv2.inRange(hsv_roi, np.array([160, 160,10]), np.array([190,255,255]))
- -    ycr_roi=cv2.cvtColor(frame,cv2.COLOR_BGR2YCrCb)
- -    mask_2=cv2.inRange(ycr_roi, np.array((0.,165.,0.)), np.array((255.,255.,255.)))
- -
- -    mask = mask_1 | mask_2
- -    kern_dilate = np.ones((8,8),np.uint8)
- -    kern_erode  = np.ones((3,3),np.uint8)
- -    mask= cv2.erode(mask,kern_erode)      #Eroding
- -    mask=cv2.dilate(mask,kern_dilate)     #Dilating
- -    #cv2.imshow('mask',mask)
- -return mask
- -```
- -2. To detect complex gestures we tried our hands at ML.
- -
- -3. Regarding the pains of conversion from OpenCV2 to OpenCV3 find contours function bugged us a lot. For OpenCV2 we need to do:-
- -```python
- -contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
- -````
- -whereas for OpenCV3 we need to do :-
- -```python
- -im2,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
- -```
+The major problems that we faced with respect to IP were :
+ 1. **Thresholding problems** 
+ 2. **Inability to detect complex gestures**
+ 3. **Conversion From OpenCV2 to OpenCV3**
+ 
+#### 1.2.5 Solutions to problems faced
+ This were the solutions we were able to come with :-
+ 1.  For thresholding pains we used a red glove which proved out to be very good solution. For thresholding of red colour I would recommend using HSV colour scheme instead of RGB. Here is the code for thresholding using HSV colour scheme:-
+ 
+ ```python
+ def segment_colour(frame):    #returns only the red colors in the frame
+     hsv_roi =  cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+     mask_1 = cv2.inRange(hsv_roi, np.array([160, 160,10]), np.array([190,255,255]))
+     ycr_roi=cv2.cvtColor(frame,cv2.COLOR_BGR2YCrCb)
+     mask_2=cv2.inRange(ycr_roi, np.array((0.,165.,0.)), np.array((255.,255.,255.)))
+ 
+     mask = mask_1 | mask_2
+     kern_dilate = np.ones((8,8),np.uint8)
+     kern_erode  = np.ones((3,3),np.uint8)
+     mask= cv2.erode(mask,kern_erode)      #Eroding
+     mask=cv2.dilate(mask,kern_dilate)     #Dilating
+     #cv2.imshow('mask',mask)
+ return mask
+ ```
+ 2. To detect complex gestures we tried our hands at ML.
+ 
+ 3. Regarding the pains of conversion from OpenCV2 to OpenCV3 find contours function bugged us a lot. For OpenCV2 we need to do:-
+ ```python
+ contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+ ````
+ whereas for OpenCV3 we need to do :-
+ ```python
+ im2,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+ ```
 
 
 ### 1.3 Knocking Recognition
