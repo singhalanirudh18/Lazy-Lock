@@ -32,8 +32,8 @@ The basic working of our algorithm is as follows. :-
 </br>
 Our basic IP algoritm is neatly represented by this flowchart :-
 </br>
-![alt text](https://github.com/singhalanirudh18/itsp/blob/master/images/gesture_flowchart.png)
- 
+![alt text](https://github.com/singhalanirudh18/itsp/blob/master/images/gesture_flowchart.png "Logo Title Text 1")
+
 #### 1.2.4 Problems
 
 
