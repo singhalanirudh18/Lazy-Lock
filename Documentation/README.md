@@ -31,7 +31,8 @@ The basic working of our algorithm is as follows. :-
 6. Then we filter out defects by applying appropiate filters such as angle between defect and the points of the line should be less than 80 degrees.
 </br>
 Our basic IP algoritm is neatly represented by this flowchart :
-![alt text](https://github.com/singhalanirudh18/itsp/blob/master/images/gesture_flowchart.png "Logo Title Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 #### 1.2.4 Problems
 
 
