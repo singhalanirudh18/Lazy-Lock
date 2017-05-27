@@ -72,8 +72,11 @@ The major problems that we faced with respect to IP were :
 
 ### 1.3 Knocking Recognition
 #### 1.3.1 Idea
+The lock can also be opened by specific patterns of knocks. To recognise knocks, we have used microphone and low pass filter to filter out the low frequency knocks. The knocks are then analysed by raspberry pi.
 #### 1.3.2 Components
+I have used microphone and opamp (LM 324) to detect the knocks.
 #### 1.3.3 Working
+The microphone produces ac signal of various frequencies. That signal is in milivolts, hence it is amplified by an Op-amp. The amplified signal is then passed through a low pass filter which selectively amplifies the low frequency components of the signal. The output of low pass filter is then compared with a threshold value, pre-setted by a variable resistor.Hence, the comparaor gives high output whenever there is knock. This high value is recorded by raspberry pi which then analyses them to checkif the are in required pattern.
 #### 1.3.4 Problems
 
 
