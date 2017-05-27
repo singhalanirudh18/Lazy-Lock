@@ -19,7 +19,7 @@ Locking and unlocking of a door is a crutial aspect as far as security is concer
 
 ### 1.2 Image processing
 #### 1.2.1 Idea
-Using Image Processing through OpenCV what we hope to accomplish is that to recognise various gestures and then send a command to the rpi depending upon the gesture to whether to open the door or not. For learning basics of OpenCV I reffered [openCV documentation](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html) and to see basics of gesture recognition I referred [this blog](http://creat-tabu.blogspot.in/2013/08/opencv-python-hand-gesture-recognition.html).
+Using Image Processing through OpenCV what we hope to accomplish is that to recognise various gestures and then send a command to the rpi depending upon the gesture to whether to open the door or not. For learning basics of OpenCV I referred [openCV documentation](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html) and to see basics of gesture recognition I referred [this blog](http://creat-tabu.blogspot.in/2013/08/opencv-python-hand-gesture-recognition.html).
 #### 1.2.2 Components
 #### 1.2.3 Working
 The basic working of our algorithm is as follows. :-
@@ -92,6 +92,10 @@ We will also use bluetooth to make the lock function smoothly. Using the RPi and
   
 
 #### 1.4.4 Problems
+ 1. Lack of material on the net
+ 2. Problems in bluetooth connection between the RPi and Mobile phone
+#### 1.2.5 Solutions to problems faced
+ 1. Compilation of commands through differnt websites mainly this https://spidyhero.wordpress.com/2016/03/15/using-smart-phone-android-to-control-led-on-raspberry-pi-3-through-bluetooth-connection/
 
 ## 2. Integration with Raspberry Pi
 
