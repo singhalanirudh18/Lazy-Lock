@@ -8,7 +8,7 @@
 
 Here we present you a lock opening system designed such that a door locked from inside can be opened by a particular hand gesture or a particular knock pattern performed on the other side of the door. Potential of this system ranges from locking personal belongings in vault or locking your room or even house door.This system can be very useful for providing security. The system can then be further implemented to use face recognisition to provide better security. We first present the issues surrounding its conceptual design and then describe in detail the component level implementation of the system, which we have designed and built. 
 
-Our problem statement which precisely describes the problem which we are aiming to tackle goes as follows: 
+Our problem statement which precisely describes the problem which we are aiming to tackle goes as follows: </br>
 ** to design a system which opens a lock on performing a specific gesture or knock pattern with maximum precision.**
 
 ## 1.Introduction
