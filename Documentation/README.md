@@ -2,7 +2,7 @@
 
 
 
-# Lazy Lock :Life Simplefied
+# Lazy Lock :Life Simplified
 
 ## Abstract
 
