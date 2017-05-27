@@ -58,7 +58,16 @@ def segment_colour(frame):    #returns only the red colors in the frame
     #cv2.imshow('mask',mask)
 return mask
 ```
+2. To detect complex gestures we tried our hands at ML.
 
+3. Regarding the pains of conversion from OpenCV2 to OpenCV3 find contours function bugged us a lot. For OpenCV2 we need to do:-
+```python
+contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+````
+whereas for OpenCV3 we need to do :-
+```python
+im2,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+```
 
 
 ### 1.3 Knocking Recognition
