@@ -29,7 +29,7 @@ The basic working of our algorithm is as follows. :-
 4. After getting the appropiate contour we draw the convex hull of the contour which is basically the smallest polygon enclosing the contour.
 5. After getting the convex hull we find the defects of contours which are basically the points on contours farthest from the sides of polygon.
 6. Then we filter out defects by applying appropiate filters such as angle between defect and the points of the line should be less than 80 degrees.
-</br>
+
 Our basic IP algoritm is neatly represented by this flowchart :
 ![alt text](https://github.com/singhalanirudh18/itsp/blob/master/images/gesture_flowchart.png)
 
