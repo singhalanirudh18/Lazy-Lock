@@ -94,9 +94,29 @@ We will also use bluetooth to make the lock function smoothly. Using the RPi and
 #### 1.4.4 Problems
  1. Lack of material on the net
  2. Problems in bluetooth connection between the RPi and Mobile phone
+
+
 #### 1.2.5 Solutions to problems faced
  1. Compilation of commands through differnt websites mainly [this](https://spidyhero.wordpress.com/2016/03/15/using-smart-phone-android-to-control-led-on-raspberry-pi-3-through-bluetooth-connection/)
  2. The most helpful blog was [this one](https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/)
+
+### 1.5 Machine Learning
+#### 1.5.1 Idea
+What we hoped to accomplish with ML was to recognize complex gestures which we were unable to recognize using OpenCV. For our purposes we used classification mode in which every trial and test cases belongs to discrete classes. We used scikit-learn for our purpose. For learning basics of classification I referred [this tutorial](http://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py).
+#### 1.5.2 Components
+#### 1.5.3 Working
+Passing the raw image into model would be useless as the number of the values will be very large so we used the following algo for our purpose :-
+1. First we recognize our region of interest that is the Hand. For identifying ROI we have used OpenCV in which we first we find the bounding box of the contour of the hand and to identify hand we have used the previous the previous concept of red glove. Once we have got the bounding box then we take bounding box plus 10% of width and height as ROI.
+2. After this we resize the ROI so that all the cases have same size.
+3. Once we have got ROI half the battle is won after that we have used concept of HOG(Histogram oriented gradients) to vectorize the final ROI.
+4. Once we have got the Final ROI then we train our model on the dataset then we are ready to predict.  
+#### 1.5.4 Problems
+1. The most meticilous problem I faced during finding ROI was when I encountered this error message :-
+```
+ValueError: Buffer not C contiguous
+```
+#### 1.5.5 Solutions to the problem faced
+1. The reason for this error message was very obvious but not at all intuitive by seeing the error message so it consumed a lot of our time. So the reason for this error message was when we were taking bounding box plus 10% as our ROI the additional region was going out of the original image.
 ## 2. Integration with Raspberry Pi
 
 
