@@ -19,8 +19,16 @@ Locking and unlocking of a door is a crutial aspect as far as security is concer
 
 ### 1.2 Image processing
 #### 1.2.1 Idea
+Using Image Processing through OpenCV what we hope to accomplish is that to recognise various gestures and then send a command to the rpi depending upon the gesture to whether to open the door or not. For learning basics of OpenCV I reffered [openCV documentation](http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html) and to see basics of gesture recognition I referred [this blog](http://creat-tabu.blogspot.in/2013/08/opencv-python-hand-gesture-recognition.html).
 #### 1.2.2 Components
 #### 1.2.3 Working
+The basic working of our algorithm is as follows. :-
+1. First of all we need to binarize our image using appropiate thresholding techniques.
+2. After getting binarised image we find all the contours in the image.
+3. As there may be some unwanted contours in the images we select them by selecting contour of the greatest area.
+4. After getting the appropiate contour we draw the convex hull of the contour which is basically the smallest polygon enclosing the contour.
+5. After getting the convex hull we find the defects of contours which are basically the points on contours farthest from the sides of polygon.
+6. Then we filter out defects by applying appropiate filters such as angle between defect and the points of the line should be less than 80 degrees. 
 #### 1.2.4 Problems
 
 
