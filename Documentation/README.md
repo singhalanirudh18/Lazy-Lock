@@ -129,5 +129,20 @@ ValueError: Buffer not C contiguous
 #### 1.5.5 Solutions to the problem faced
 1. The reason for this error message was very obvious but not at all intuitive by seeing the error message so it consumed a lot of our time. So the reason for this error message was when we were taking bounding box plus 10% as our ROI the additional region was going out of the original image.
 ## 2. Integration with Raspberry Pi
+After completing everything individually we went on to integrate everything on RPi.
+### 2.1 Problems faced
+1. The major problems we faced on RPi were regarding installation. For installing opencv on rpi i referred this [blog](http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/) but the problem was that I ended up making a virtual environment and we faced problems regarding installation on the virtual environment.
 
-
+## 2.2 Solutions to the problems faced.=
+1. For installation of any python package say xyz. Commands like :-
+```
+sudo apt get install python3-xyz
+```
+or
+```
+sudo pip3 install xyz
+```
+didn't work. What we need to do is :-
+```
+pip3 install xyz
+```
