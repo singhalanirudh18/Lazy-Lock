@@ -1,18 +1,19 @@
-import RPi.GPIO as g
+import RPi.GPIO as GPIO
 import time
-g.setmode(g.BOARD)
-g.steup(18,g.OUT)
-pwm = g.PWM(18,50)# use 100 if error
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18,GPIO.OUT)
+pwm = GPIO.PWM(18,50)# use 100 if error
 pwm.start(2)
 while True:
 
   
-  input("\nPress Enter to continue.") 
-  pwm.ChangeDutyCycle(6.5)
-
-  input("\nPress Enter to continue.") 
+  #input("\nPress Enter to continue.") 
+ 
+  #input("\nPress Enter to continue.") 
   pwm.ChangeDutyCycle(10)
-  
+  time.sleep(2)
+  pwm.ChangeDutyCycle(6.5)
+  time.sleep(2) 
   
   input("\nPress Enter to continue.") 
   pwm.ChangeDutyCycle(2)
