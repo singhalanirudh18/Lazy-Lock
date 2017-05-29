@@ -1,0 +1,84 @@
+#include <SoftwareSerial.h>
+#include <Servo.h>
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+
+SoftwareSerial EEBlue(10, 11); // RX | TX
+/*void door_open(){
+  digitalWrite(3, HIGH);
+}
+void door_close(){
+  digitalWrite(3, LOW);
+}
+*/bool dnd=0;
+  bool op=0;
+void setup()
+{
+ 
+  Serial.begin(4800);
+  EEBlue.begin(9600);  //Default Baud for comm, it may be different for your Module. 
+  Serial.println("The bluetooth gates are open.\n Connect to HC-05 from any other bluetooth device with 1234 as pairing key!.");
+  pinMode(3, OUTPUT); 
+  pinMode(5, OUTPUT);
+  pinMode(7, INPUT);
+  digitalWrite(3, LOW);// set pin to input
+  digitalWrite(5, LOW);
+   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+ 
+}
+ 
+void loop()
+{
+ 
+  // Feed any data from bluetooth to Terminal.
+  if (EEBlue.available()){
+    
+    //Serial.println("asdf4");
+    int i=EEBlue.read();
+    Serial.println(i);
+    if(i==254){
+    Serial.println("open");
+    Serial.println(op);
+    op=!op;
+    Serial.println(op);
+    if (op==1)
+    {for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }}
+  if (op==0)
+  {
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }}
+  }
+    
+    /*digitalWrite(3, HIGH);}
+    if(i=='c'){
+    Serial.println("close");
+    digitalWrite(3, LOW);}
+    if(i=='d'){
+    Serial.println("dnd");}
+//    dnd=true;}
+     if(i=='u'){
+    Serial.println("undo dnd");}
+    //dnd=false;}
+ //   if(!dnd && digitalRead(7) == 1){
+   //    }
+    */
+    }
+if(i==255){
+    Serial.println("dnd");
+    Serial.println(dnd);
+    dnd=!dnd;
+    Serial.println(dnd);}
+    //Serial.write(EEBlue.read());}
+ 
+  // Feed all data from termial to bluetooth
+ // if (Serial.available())
+   // EEBlue.write(Serial.read());
+}
