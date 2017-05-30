@@ -86,6 +86,9 @@ C1=4.7uF                                       C2=0.005uF
 
 The microphone produces ac signal of various frequencies. That signal is in milivolts, hence it is amplified by an Op-amp. The amplified signal is then passed through a low pass filter which selectively amplifies the low frequency components of the signal. The output of low pass filter is then compared with a threshold value, pre-setted by a variable resistor.Hence, the comparaor gives high output whenever there is knock. This high value is recorded by raspberry pi which then analyses them to checkif the are in required pattern.
 #### 1.3.4 Problems
+1.The sensor reading was fluctuating eventhough it was grounded.
+#### 1.3.5 Solution to Problems
+1.The grouund of raspberry pi were was not connected with the power supply ground. When they were shorted, the sensor reading became constant.
 
 
 ### 1.4 Bluetooth
