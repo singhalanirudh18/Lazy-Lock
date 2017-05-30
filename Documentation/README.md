@@ -149,3 +149,5 @@ didn't work. What we need to do is :-
 ```
 pip3 install xyz
 ```
+## 3. Open ended problems 
+1. We were using bluetooth in RPi. But suddenly it stopped working. Bluetooth module was importing in python shell but not working in python script. So as a substitute for this we used HC-05 on arduino.
