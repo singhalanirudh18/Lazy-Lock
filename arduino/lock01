@@ -1,0 +1,148 @@
+#include <SoftwareSerial.h>
+#include <Servo.h>
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+int rpi =5;
+int ip=4;
+int knock = 7;
+SoftwareSerial EEBlue(10, 11); // RX | TX
+/*void door_open(){
+  digitalWrite(3, HIGH);
+}
+void door_close(){
+  digitalWrite(3, LOW);
+}
+*/bool dnd=0;
+  bool op=0;
+void setup()
+{
+ 
+  Serial.begin(9600);
+  EEBlue.begin(9600);  //Default Baud for comm, it may be different for your Module. 
+  Serial.println("The bluetooth gates are open.\n Connect to HC-05 from any other bluetooth device with 1234 as pairing key!.");
+  pinMode(3, OUTPUT); 
+  pinMode(5, OUTPUT);
+  pinMode(rpi, INPUT);
+  pinMode(knock, INPUT);
+  pinMode(ip, INPUT);
+  digitalWrite(3, LOW);// set pin to input
+  digitalWrite(5, LOW);
+   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+ 
+}
+ 
+void loop()
+{
+ 
+  // Feed any data from bluetooth to Terminal.
+  if (EEBlue.available()){
+    //Serial.println("yo");
+    //Serial.println("asdf4");
+    int i=EEBlue.read();
+    Serial.println(i);
+    if(i==254){
+    Serial.println("open");
+    Serial.println(op);
+    op=!op;
+    Serial.println(op);
+    if (op==1)
+    {Serial.println("open");
+      for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }}
+  if (op==0)
+  {
+    Serial.println("close");
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }}
+  }
+    
+    /*digitalWrite(3, HIGH);}
+    if(i=='c'){
+    Serial.println("close");
+    digitalWrite(3, LOW);}
+    if(i=='d'){
+    Serial.println("dnd");}
+//    dnd=true;}
+     if(i=='u'){
+    Serial.println("undo dnd");}
+    //dnd=false;}
+ //   if(!dnd && digitalRead(7) == 1){
+   //    }
+    */
+    
+if(i==255){
+    Serial.println("dnd");
+    Serial.println(dnd);
+    dnd=!dnd;
+    Serial.println(dnd);
+    if(dnd==1) Serial.println("dndON");
+    if(dnd==0) Serial.println("dndOFF");
+    }
+
+
+    //Serial.write(EEBlue.read());}
+ 
+  // Feed all data from termial to bluetooth
+ // if (Serial.available())
+   // EEBlue.write(Serial.read());
+}
+if(dnd==0 && digitalRead(ip)==1) {
+  unsigned long StartTime = millis();
+  unsigned long CurrentTime = millis(); 
+  unsigned long ElapsedTime = CurrentTime - StartTime;
+while(ElapsedTime <= 10000){
+CurrentTime = millis();
+ElapsedTime = CurrentTime - StartTime;
+if(digitalRead(rpi)==1){
+  Serial.println("open");
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  delay(2000);
+  Serial.println("close");
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  break;}
+}
+
+
+}
+//Serial.println   (digitalRead(knock));
+if(dnd==0 && digitalRead(knock)==1) {
+  Serial.println("yo");
+  unsigned long StartTime = millis();
+  unsigned long CurrentTime = millis(); 
+  unsigned long ElapsedTime = CurrentTime - StartTime;
+while(ElapsedTime <= 10000){
+CurrentTime = millis();
+ElapsedTime = CurrentTime - StartTime;
+if(digitalRead(rpi)==1){
+  Serial.println("open");
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  delay(2000);
+  Serial.println("close");
+    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  break;}
+}
+
+
+}
+}
